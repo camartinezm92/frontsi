@@ -16,8 +16,10 @@
                     <td>{{candidatosActual.nombre}}</td>
                     <td>{{candidatosActual.apellido}} </td>
                     <td>{{candidatosActual.numero_resolucion}}</td>
-                    <td>{{candidatosActual.partido}}</td>
-                    <td>{{candidatosActual.votos}} </td>
+                    <td>{{candidatosActual.partido.nombre_partido}}</td>
+                    <td>{{candidatosActual.votos.mesa.numero_mesa}} </td>
+                    <td>{{candidatosActual.votos.mesa.cantidad_inscritos}} </td>
+                    <td>{{candidatosActual.votos.mesa.numero_mesa}} </td>
                     <td>
                         <button type="button" class="btn btn-primary" 
                                 (click)="editar(candidatosActual._id)">

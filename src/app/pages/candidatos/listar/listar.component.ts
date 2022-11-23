@@ -10,7 +10,7 @@ import { CandidatosService } from '../../../servicios/candidato.service';
 })
 export class ListarComponent implements OnInit {
   candidatos : Candidato[];
-  nombresColumnas: string[] = ['Cedula','Nombre','Apellido','Numero Resolucion','partido','votos'];
+  nombresColumnas: string[] = ['Cedula','Nombre','Apellido','Numero Resolucion','Partido','Mesa','Incritos Mesa','Voto'];
   constructor(private miServicioCandidatos: CandidatosService) { }
 
   ngOnInit(): void {
@@ -23,6 +23,7 @@ export class ListarComponent implements OnInit {
       });
   }
   agregar():void{
+    
     console.log("agregando nuevo")
   }
   editar(id:string):void{
