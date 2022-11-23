@@ -1,0 +1,37 @@
+<div class="col-lg-12">
+    <nb-card>
+        <nb-card-header>
+            ADMINISTRACIÓN DE CANDIDATOS 
+            <button type="button" class="btn btn-success" (click)="agregar()">
+                <i class="fas fa-plus"></i>
+            </button>
+        </nb-card-header>
+        <table class="table">
+            <tr>
+                <th *ngFor="let columaActual of nombresColumnas">{{columaActual}}</th>
+            </tr>
+            <ng-container *ngFor="let candidatosActual of candidatos">
+                <tr>
+                    <td>{{candidatosActual.cedula}}</td>
+                    <td>{{candidatosActual.nombre}}</td>
+                    <td>{{candidatosActual.apellido}} </td>
+                    <td>{{candidatosActual.numero_resolucion}}</td>
+                    <td>{{candidatosActual.partido.nombre_partido}}</td>
+                    <td>{{candidatosActual.votos.mesa.numero_mesa}} </td>
+                    <td>{{candidatosActual.votos.mesa.cantidad_inscritos}} </td>
+                    <td>{{candidatosActual.votos.mesa.numero_mesa}} </td>
+                    <td>
+                        <button type="button" class="btn btn-primary" 
+                                (click)="editar(candidatosActual._id)">
+                            <i class="fas fa-pencil-alt"></i>
+                        </button>
+                        <button type="button" class="btn btn-danger" 
+                                (click)="eliminar(candidatosActual._id)">
+                            <i class="fas fa-solid fa-trash"></i>
+                        </button>
+                    </td>
+                </tr>
+            </ng-container>
+        </table>
+    </nb-card>
+</div>
