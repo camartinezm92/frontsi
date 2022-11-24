@@ -7,6 +7,8 @@ import { ListarComponent } from './listar/listar.component';
 import { EliminarComponent } from './eliminar/eliminar.component';
 import { ModificarComponent } from './modificar/modificar.component';
 import { NbCardModule } from '@nebular/theme';
+import { NgModel } from '@angular/forms';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -19,7 +21,8 @@ import { NbCardModule } from '@nebular/theme';
   imports: [
     CommonModule,
     CandidatosRoutingModule,
-    NbCardModule
+    NbCardModule,
+    FormsModule
   ]
 })
 export class CandidatosModule { }
