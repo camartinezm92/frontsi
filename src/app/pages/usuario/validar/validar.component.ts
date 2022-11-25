@@ -5,11 +5,11 @@ import { Usuario } from '../../../modelos/usuario.model';
 import { UsuarioService } from '../../../servicios/usuario.service';
 
 @Component({
-  selector: 'ngx-modificar',
-  templateUrl: './modificar.component.html',
-  styleUrls: ['./modificar.component.scss']
+  selector: 'ngx-validar',
+  templateUrl: './validar.component.html',
+  styleUrls: ['./validar.component.scss']
 })
-export class ModificarComponent implements OnInit {
+export class ValidarComponent implements OnInit {
   modoCreacion: boolean = true;
   id_usuario: string = "";
   intentoEnvio: boolean = false;
@@ -41,14 +41,14 @@ export class ModificarComponent implements OnInit {
         this.elusuario = data;
       });
   }
-  agregar(): void {
-    if (this.validarDatosCompletos() && this.elusuario.contrasena == this.elusuario.contrasena2) {
+  validar(): void {
+    if (this.validarDatosCompletos()) {
       this.intentoEnvio = true;
-      this.miServicioUsuario.crear(this.elusuario).
+      this.miServicioUsuario.validar(this.elusuario).
         subscribe(data => {
           Swal.fire(
-            'Creado',
-            'El Usuario ha sido creado correctamente',
+            'Los Datos Ingresados son correctos',
+            'El Usuario ha sido Validado correctamente',
             'success'
           )
           this.router.navigate(["/pages/usuarios/listar"]);
@@ -90,11 +90,8 @@ export class ModificarComponent implements OnInit {
   }
   validarDatosCompletos():boolean{
     this.intentoEnvio=true;
-    if(this.elusuario.cedula=="" || 
-       this.elusuario.nombre=="" || 
-       this.elusuario.contrasena==""||
-       this.elusuario.contrasena2==""||
-       this.elusuario.correo==""){
+    if( this.elusuario.nombre=="" || 
+       this.elusuario.contrasena==""){
       return false;
     }else{
       return true;

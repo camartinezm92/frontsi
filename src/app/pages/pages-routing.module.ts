@@ -11,6 +11,11 @@ const routes: Routes = [{
   component: PagesComponent,
   children: [
     {
+      path: 'ciclo4',
+      loadChildren: () => import('./ciclo4/ciclo4.module')
+        .then(m => m.Ciclo4Module),
+    },
+    {
       path: 'candidatos',
       loadChildren: () => import('./candidatos/candidatos.module')
         .then(m => m.CandidatosModule),

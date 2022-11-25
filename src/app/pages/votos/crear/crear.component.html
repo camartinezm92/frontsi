@@ -1,1 +1,67 @@
-<p>crear works!</p>
+<div class="col-lg-12">
+    <nb-card>
+        <nb-card-header *ngIf="modoCreacion">
+           <h3 class="text-center">CREAR VOTOS</h3> 
+        </nb-card-header>
+        <nb-card-header *ngIf="!modoCreacion">
+        </nb-card-header>
+        <nb-card-body>
+            <div class="row">
+                <div class="col-3">
+                    <label>MESA</label>
+                </div>
+                <div class="col-9">
+                    <select class="form-select" [(ngModel)]="relacion1">
+                        <option value="" selected>Seleccione una mesa</option>
+                        <ng-container *ngFor="let mesaActual of listamesa">
+                            <option value="{{mesaActual._id}}">{{mesaActual.numero_mesa}}</option>
+                        </ng-container>
+                      </select>
+                    <p *ngIf="intentoEnvio && relacion1=='' ">Requerido</p>
+                </div>
+            </div>
+            <br>
+            <div class="row">
+                <div class="col-3">
+                    <label>Votos Candidato</label>
+                </div>
+                <div class="col-9">
+                    <input class="form-control" type="text" 
+                           [disabled]="!modoCreacion" 
+                           [(ngModel)]="elvoto.votos_candidato">
+                    <p *ngIf="intentoEnvio && elvoto.votos_candidato=='' ">Requerido</p>
+                </div>
+            </div>
+            <br>
+            <div class="row">
+                <div class="col-3">
+                    <label>Votos Totales Mesa</label>
+                </div>
+                <div class="col-9">
+                    <input class="form-control" type="text" 
+                           [(ngModel)]="elvoto.votos_totales">
+                    <p *ngIf="intentoEnvio && elvoto.votos_totales=='' ">Requerido</p>
+                </div>
+            </div>
+            <br>
+            <div class="row">
+                <div class="col-3">
+                    <label>Votos nulos en la mesa</label>
+                </div>
+                <div class="col-9">
+                    <input class="form-control" type="text" 
+                           [(ngModel)]="elvoto.votos_nulos">
+                    <p *ngIf="intentoEnvio && elvoto.votos_nulos=='' ">Requerido</p>
+                </div>
+            </div>
+            <br>
+            <div class="row">
+                    <button  
+                              class="btn btn-primary btn-block"  (click)="crear()">
+                        Crear
+                    </button>
+                 
+            </div>
+        </nb-card-body>
+    </nb-card>
+</div>

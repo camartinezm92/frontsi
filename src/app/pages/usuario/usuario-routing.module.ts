@@ -4,6 +4,8 @@ import { CrearComponent } from './crear/crear.component';
 import { EliminarComponent } from './eliminar/eliminar.component';
 import { ListarComponent } from './listar/listar.component';
 import { ModificarComponent } from './modificar/modificar.component';
+import { RelacionarComponent } from './relacionar/relacionar.component';
+import { ValidarComponent } from './validar/validar.component';
 
 const routes: Routes = [
   {
@@ -18,6 +20,12 @@ const routes: Routes = [
   },  {
     path: 'modificar/:id',
     component:ModificarComponent
+  },  {
+    path: 'relacionar',
+    component:RelacionarComponent
+  },  {
+    path: 'validar',
+    component:ValidarComponent
   }
 ]
 @NgModule({

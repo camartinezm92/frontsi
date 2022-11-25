@@ -51,10 +51,10 @@ export class ModificarComponent implements OnInit {
   editar(): void {
     if (this.elpermisorol._id!="" && this.relacion1!= "" && this.relacion2!="") {
       this.intentoEnvio = true;
-      this.miServiciopermisosrol.editar(this.id_permisorol,this.relacion1,this.relacion2).
+      this.miServiciopermisosrol.editar(this.elpermisorol._id,this.relacion1,this.relacion2).
         subscribe(data => {
           Swal.fire(
-            'Relacionado',
+            'Modifidado',
             'El Rol y el partido se han relacionado correctamente',
             'success'
           )

@@ -32,5 +32,8 @@ export class UsuarioService {
   relacionar(id: string,id2: string) {
     return this.http.put(`${environment.url_gateway}/usuarios/${id}/partidos/${id2}`,null);
   }
+  validar(elusuario: Usuario) {
+    return this.http.post(`${environment.url_gateway}/usuarios/validar`, elusuario);
+  }
 
 }

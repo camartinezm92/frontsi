@@ -1,0 +1,48 @@
+<div class="col-lg-12">
+    <nb-card>
+        <nb-card-header *ngIf="modoCreacion">
+           <h3 class="text-center">RELACIONAR USUARIOS CON ROL</h3> 
+        </nb-card-header>
+        <nb-card-header *ngIf="!modoCreacion">
+        </nb-card-header>
+        <nb-card-body>
+            <div class="row">
+                <div class="col-3">
+                    <label>Usuarios</label>
+                </div>
+                <div class="col-9">
+                    <select class="form-select" [(ngModel)]="relacion1">
+                        <option value="" selected>Seleccione un Usuario</option>
+                        <ng-container *ngFor="let usuariosActual of listausuarios">
+                            <option value="{{usuariosActual._id}}">{{usuariosActual.nombre}}</option>
+                        </ng-container>
+                      </select>
+                    <p *ngIf="intentoEnvio && relacion1=='' ">Requerido</p>
+                </div>
+            </div>
+            <br>
+            <div class="row">
+                <div class="col-3">
+                    <label>ROL</label>
+                </div>
+                <div class="col-9">
+                    <select class="form-select" [(ngModel)]="relacion2">
+                        <option value="" selected>Seleccione un ROL</option>
+                        <ng-container *ngFor="let rolActual of listarol">
+                            <option value="{{rolActual._id}}">{{rolActual.nombre}}</option>
+                        </ng-container>
+                    </select>
+                    <p *ngIf="intentoEnvio && relacion2=='' ">Requerido</p>
+                </div>
+            </div>
+            <br>
+            <div class="row">
+                    <button  
+                              class="btn btn-primary btn-block"  (click)="relacionar()">
+                        Relacionar
+                    </button>
+                 
+            </div>
+        </nb-card-body>
+    </nb-card>
+</div>

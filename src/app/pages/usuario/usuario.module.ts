@@ -8,6 +8,8 @@ import { ModificarComponent } from './modificar/modificar.component';
 import { EliminarComponent } from './eliminar/eliminar.component';
 import { FormsModule } from '@angular/forms';
 import { NbCardModule } from '@nebular/theme';
+import { RelacionarComponent } from './relacionar/relacionar.component';
+import { ValidarComponent } from './validar/validar.component';
 
 
 @NgModule({
@@ -15,7 +17,9 @@ import { NbCardModule } from '@nebular/theme';
     ListarComponent,
     CrearComponent,
     ModificarComponent,
-    EliminarComponent
+    EliminarComponent,
+    RelacionarComponent,
+    ValidarComponent
   ],
   imports: [
     CommonModule,
