@@ -24,7 +24,7 @@ export class UsuarioService {
     return this.http.post(`${environment.url_gateway}/usuarios`, elusuario);
   }
   sinvcrear(elusuario: Usuario) {
-    return this.http.post(`127.0.0.1:8000/usuarios`, elusuario);
+    return this.http.post(`http://127.0.0.1:8000/usuarios`, elusuario);
   }
   editar(id:string,elusuario: Usuario) {
     return this.http.put(`${environment.url_gateway}/usuarios/${id}`, elusuario);

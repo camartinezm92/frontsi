@@ -29,7 +29,7 @@
                     <select class="form-select" [(ngModel)]="relacion2">
                         <option value="" selected>Seleccione una URL</option>
                         <ng-container *ngFor="let permisoActual of listapermisos">
-                            <option value="{{permisoActual._id}}">{{permisoActual.url}}</option>
+                            <option value="{{permisoActual._id}}">URL:{{permisoActual.url}} &nbsp;Metodo:{{permisoActual.metodo}}</option>
                         </ng-container>
                     </select>
                     <p *ngIf="intentoEnvio && relacion2=='' ">Requerido</p>

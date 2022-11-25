@@ -17,6 +17,7 @@ export class ModificarComponent implements OnInit {
   intentoEnvio: boolean = false;
   listamesa = []
   relacion1 = ""
+  x=""
   elvoto: Votos = {
     votos_candidato: "",
     votos_totales: "",
@@ -39,9 +40,11 @@ export class ModificarComponent implements OnInit {
   }
 
   modificar(): void {
+    this.x=this.elvoto._id
+    console.log(this.x)
     if (this.relacion1!= "") {
       this.intentoEnvio = true;
-      this.miServicioVoto.editar(this.elvoto._id,this.relacion1,this.elvoto).
+      this.miServicioVoto.editar(this.x,this.relacion1,this.elvoto).
         subscribe(data => {
           Swal.fire(
             'Modificacion Exitosa',

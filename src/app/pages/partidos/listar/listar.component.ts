@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import Swal from 'sweetalert2';
 import { Partidos } from '../../../modelos/partidos.model';
 import { PartidosService } from '../../../servicios/partidos.service';
@@ -11,7 +12,8 @@ import { PartidosService } from '../../../servicios/partidos.service';
 export class ListarComponent implements OnInit {
   Partidos : Partidos[];
   nombresColumnas: string[] = ['nombre_partido','lema'];
-  constructor(private miServicioPartidos: PartidosService) { }
+  constructor(private miServicioPartidos: PartidosService,
+    private router: Router) { }
 
   ngOnInit(): void {
     this.listar();
@@ -23,12 +25,12 @@ export class ListarComponent implements OnInit {
       });
   }
   agregar():void{
-    
-    console.log("agregando nuevo")
+    this.router.navigate(["pages/partidos/crear"]);
   }
   editar(id:string):void{
-    console.log("editando a "+id)
+    this.router.navigate(["pages/partidos/modificar/"+id]);
   }
+  
   eliminar(id:string):void{
     Swal.fire({
       title: 'Eliminar Partidos',
