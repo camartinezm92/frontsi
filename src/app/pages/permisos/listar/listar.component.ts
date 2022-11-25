@@ -10,7 +10,7 @@ import { PermisosService } from '../../../servicios/permisos.service';
 })
 export class ListarComponent implements OnInit {
   Permisos : Permisos[];
-  nombresColumnas: string[] = ['Cedula','Nombre','Apellido','Numero Resolucion','Partido','Mesa','Incritos Mesa','Voto'];
+  nombresColumnas: string[] = ['url','metodo'];
   constructor(private miServicioPermisos: PermisosService) { }
 
   ngOnInit(): void {

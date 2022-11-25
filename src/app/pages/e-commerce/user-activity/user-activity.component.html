@@ -1,7 +1,7 @@
 <nb-card size="medium">
 
   <nb-card-header>
-    <span>User Activity</span>
+    <span>User Activity CEST</span>
     <nb-select [selected]="type" (selectedChange)="getUserActivity($event); type = $event">
       <nb-option *ngFor="let t of types" [value]="t">{{ t }}</nb-option>
     </nb-select>

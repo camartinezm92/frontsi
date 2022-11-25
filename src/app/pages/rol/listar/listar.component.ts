@@ -10,7 +10,7 @@ import { RolService } from '../../../servicios/rol.service';
 })
 export class ListarComponent implements OnInit {
   Rol : Rol[];
-  nombresColumnas: string[] = ['Cedula','Nombre','Apellido','Numero Resolucion','Partido','Mesa','Incritos Mesa','Voto'];
+  nombresColumnas: string[] = ['nombre','descripcion'];
   constructor(private miServicioRol: RolService) { }
 
   ngOnInit(): void {

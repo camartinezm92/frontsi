@@ -6,6 +6,9 @@ import { EliminarComponent } from './eliminar/eliminar.component';
 import { ListarComponent } from './listar/listar.component';
 import { CrearComponent } from './crear/crear.component';
 import { ModificarComponent } from './modificar/modificar.component';
+import { NbCardModule } from '@nebular/theme';
+import { NgModel } from '@angular/forms';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -17,7 +20,9 @@ import { ModificarComponent } from './modificar/modificar.component';
   ],
   imports: [
     CommonModule,
-    ResultadosRoutingModule
+    ResultadosRoutingModule,
+    NbCardModule,
+    FormsModule
   ]
 })
 export class ResultadosModule { }

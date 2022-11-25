@@ -10,7 +10,7 @@ import { MesasService } from '../../../servicios/mesas.service';
 })
 export class ListarComponent implements OnInit {
   Mesas : Mesas[];
-  nombresColumnas: string[] = ['Cedula','Nombre','Apellido','Numero Resolucion','Partido','Mesa','Incritos Mesa','Voto'];
+  nombresColumnas: string[] = ['numero_mesa','cantidad_inscritos',' id_jurado_inscrito'];
   constructor(private miServicioMesas: MesasService) { }
 
   ngOnInit(): void {

@@ -10,7 +10,7 @@ import { UsuarioService } from '../../../servicios/usuario.service';
 })
 export class ListarComponent implements OnInit {
   Usuario : Usuario[];
-  nombresColumnas: string[] = ['Cedula','Nombre','Apellido','Numero Resolucion','Partido','Mesa','Incritos Mesa','Voto'];
+  nombresColumnas: string[] = ['nombre','correo','contrasena','cedula','token'];
   constructor(private miServicioUsuario: UsuarioService) { }
 
   ngOnInit(): void {

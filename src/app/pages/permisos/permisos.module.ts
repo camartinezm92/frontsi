@@ -6,7 +6,9 @@ import { EliminarComponent } from './eliminar/eliminar.component';
 import { CrearComponent } from './crear/crear.component';
 import { ModificarComponent } from './modificar/modificar.component';
 import { ListarComponent } from './listar/listar.component';
-
+import { NbCardModule } from '@nebular/theme';
+import { NgModel } from '@angular/forms';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -17,7 +19,9 @@ import { ListarComponent } from './listar/listar.component';
   ],
   imports: [
     CommonModule,
-    PermisosRoutingModule
+    PermisosRoutingModule,
+    NbCardModule,
+    FormsModule
   ]
 })
 export class PermisosModule { }

@@ -13,9 +13,9 @@ export class PermisosrolService {
   constructor(private http: HttpClient) { }
 
   listar(): Observable<Permisosrol[]> {
-      return this.http.get<Permisosrol[]>(`${environment.url_gateway}/permisosrol`);    
+      return this.http.get<Permisosrol[]>(`${environment.url_gateway}/permisos-roles`);    
     }
   eliminar(id:string){
-    return this.http.delete<Permisosrol>(`${environment.url_gateway}/permisosrol/${id}`,);
+    return this.http.delete<Permisosrol>(`${environment.url_gateway}/permisos-roles/${id}`,);
     }
 }

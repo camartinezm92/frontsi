@@ -13,9 +13,9 @@ export class RolService {
   constructor(private http: HttpClient) { }
 
   listar(): Observable<Rol[]> {
-      return this.http.get<Rol[]>(`${environment.url_gateway}/rol`);    
+      return this.http.get<Rol[]>(`${environment.url_gateway}/roles`);    
     }
   eliminar(id:string){
-    return this.http.delete<Rol>(`${environment.url_gateway}/rol/${id}`,);
+    return this.http.delete<Rol>(`${environment.url_gateway}/roles/${id}`,);
     }
 }

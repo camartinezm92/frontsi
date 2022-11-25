@@ -10,7 +10,7 @@ import { PermisosrolService } from '../../../servicios/permisosrol.service';
 })
 export class ListarComponent implements OnInit {
   Permisosrol : Permisosrol[];
-  nombresColumnas: string[] = ['Cedula','Nombre','Apellido','Numero Resolucion','Partido','Mesa','Incritos Mesa','Voto'];
+  nombresColumnas: string[] = ['rol.nombre','permiso.url','permiso.metodo'];
   constructor(private miServicioPermisosrol: PermisosrolService) { }
 
   ngOnInit(): void {
