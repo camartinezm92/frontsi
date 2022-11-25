@@ -27,5 +27,8 @@ export class CandidatosService {
   editar(id:string,elCandidato: Candidato) {
     return this.http.put(`${environment.url_gateway}/candidatos/${id}`, elCandidato);
   }
+  relacionar(id: string,id2: string) {
+    return this.http.put(`${environment.url_gateway}/candidatos/${id}/partidos/${id2}`,null);
+  }
 
 }

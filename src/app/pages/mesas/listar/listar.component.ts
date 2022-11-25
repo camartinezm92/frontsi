@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import Swal from 'sweetalert2';
 import { Mesas } from '../../../modelos/mesas.model';
 import { MesasService } from '../../../servicios/mesas.service';
@@ -10,8 +11,9 @@ import { MesasService } from '../../../servicios/mesas.service';
 })
 export class ListarComponent implements OnInit {
   Mesas : Mesas[];
-  nombresColumnas: string[] = ['Cedula','Nombre','Apellido','Numero Resolucion','Partido','Mesa','Incritos Mesa','Voto'];
-  constructor(private miServicioMesas: MesasService) { }
+  nombresColumnas: string[] = ['numero_mesa','cantidad_inscritos',' id_jurado_inscrito'];
+  constructor(private miServicioMesas: MesasService,
+    private router: Router) { }
 
   ngOnInit(): void {
     this.listar();
@@ -23,12 +25,12 @@ export class ListarComponent implements OnInit {
       });
   }
   agregar():void{
-    
-    console.log("agregando nuevo")
+    this.router.navigate(["pages/mesas/crear"]);
   }
   editar(id:string):void{
-    console.log("editando a "+id)
+    this.router.navigate(["pages/mesas/modificar/"+id]);
   }
+  
   eliminar(id:string):void{
     Swal.fire({
       title: 'Eliminar Mesas',

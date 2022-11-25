@@ -16,10 +16,10 @@ const routes: Routes = [
     path: 'listar',
     component:ListarComponent
   },  {
-    path: 'modificar',
+    path: 'modificar/:id_permiso',
     component:ModificarComponent
   }
-]
+];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],

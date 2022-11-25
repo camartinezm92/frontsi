@@ -2,7 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { environment } from '../../environments/environment';
-import { Mesas } from '../modelos/mesas.model';
+import { Mesas } from '../modelos/Mesas.model';
 import { Usuario } from '../modelos/usuario.model';
 
 @Injectable({
@@ -18,14 +18,14 @@ export class MesasService {
   eliminar(id: string) {
     return this.http.delete<Mesas>(`${environment.url_gateway}/mesas/${id}`,);
   }
-  getMesa(id: string): Observable<Mesas> {
+  getMesas(id: string): Observable<Mesas> {
     return this.http.get<Mesas>(`${environment.url_gateway}/mesas/${id}`);
   }
-  crear(lamesa: Mesas) {
-    return this.http.post(`${environment.url_gateway}/mesas`, lamesa);
+  crear(elMesas: Mesas) {
+    return this.http.post(`${environment.url_gateway}/mesas`, elMesas);
   }
-  editar(id:string,lamesa: Mesas) {
-    return this.http.put(`${environment.url_gateway}/mesas/${id}`, lamesa);
+  editar(id:string,elMesas: Mesas) {
+    return this.http.put(`${environment.url_gateway}/mesas/${id}`, elMesas);
   }
 
 }

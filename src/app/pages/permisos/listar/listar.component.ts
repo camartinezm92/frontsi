@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import Swal from 'sweetalert2';
 import { Permisos } from '../../../modelos/permisos.model';
 import { PermisosService } from '../../../servicios/permisos.service';
@@ -10,8 +11,9 @@ import { PermisosService } from '../../../servicios/permisos.service';
 })
 export class ListarComponent implements OnInit {
   Permisos : Permisos[];
-  nombresColumnas: string[] = ['Cedula','Nombre','Apellido','Numero Resolucion','Partido','Mesa','Incritos Mesa','Voto'];
-  constructor(private miServicioPermisos: PermisosService) { }
+  nombresColumnas: string[] = ['url','metodo'];
+  constructor(private miServicioPermisos: PermisosService,
+  private router: Router) { }
 
   ngOnInit(): void {
     this.listar();
@@ -23,11 +25,10 @@ export class ListarComponent implements OnInit {
       });
   }
   agregar():void{
-    
-    console.log("agregando nuevo")
+    this.router.navigate(["pages/permisos/crear"]);
   }
   editar(id:string):void{
-    console.log("editando a "+id)
+    this.router.navigate(["pages/permisos/modificar/"+id]);
   }
   eliminar(id:string):void{
     Swal.fire({

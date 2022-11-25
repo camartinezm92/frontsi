@@ -10,7 +10,7 @@ import { PartidosService } from '../../../servicios/partidos.service';
 })
 export class ListarComponent implements OnInit {
   Partidos : Partidos[];
-  nombresColumnas: string[] = ['Cedula','Nombre','Apellido','Numero Resolucion','Partido','Mesa','Incritos Mesa','Voto'];
+  nombresColumnas: string[] = ['nombre_partido','lema'];
   constructor(private miServicioPartidos: PartidosService) { }
 
   ngOnInit(): void {

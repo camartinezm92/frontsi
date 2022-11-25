@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import Swal from 'sweetalert2';
 import { Permisosrol } from '../../../modelos/permisosrol.model';
 import { PermisosrolService } from '../../../servicios/permisosrol.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'ngx-listar',
@@ -10,8 +11,9 @@ import { PermisosrolService } from '../../../servicios/permisosrol.service';
 })
 export class ListarComponent implements OnInit {
   Permisosrol : Permisosrol[];
-  nombresColumnas: string[] = ['Cedula','Nombre','Apellido','Numero Resolucion','Partido','Mesa','Incritos Mesa','Voto'];
-  constructor(private miServicioPermisosrol: PermisosrolService) { }
+  nombresColumnas: string[] = ['Rol','Permiso','Metodo','Accion'];
+  constructor(private miServicioPermisosrol: PermisosrolService,
+    private router: Router) { }
 
   ngOnInit(): void {
     this.listar();
@@ -23,11 +25,10 @@ export class ListarComponent implements OnInit {
       });
   }
   agregar():void{
-    
-    console.log("agregando nuevo")
+    this.router.navigate(["pages/permisosrol/crear"]);
   }
   editar(id:string):void{
-    console.log("editando a "+id)
+    this.router.navigate(["pages/permisosrol/modificar/"+id]);
   }
   eliminar(id:string):void{
     Swal.fire({

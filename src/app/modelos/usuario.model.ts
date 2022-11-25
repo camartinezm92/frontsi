@@ -4,6 +4,7 @@ export class Usuario {
       nombre?:string;
       correo?:string;
       contrasena?:string;
+      contrasena2?:string;
       cedula?:string;
       token?:string;
 }

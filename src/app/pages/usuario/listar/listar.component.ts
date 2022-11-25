@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import Swal from 'sweetalert2';
 import { Usuario } from '../../../modelos/usuario.model';
 import { UsuarioService } from '../../../servicios/usuario.service';
@@ -10,8 +11,9 @@ import { UsuarioService } from '../../../servicios/usuario.service';
 })
 export class ListarComponent implements OnInit {
   Usuario : Usuario[];
-  nombresColumnas: string[] = ['Cedula','Nombre','Apellido','Numero Resolucion','Partido','Mesa','Incritos Mesa','Voto'];
-  constructor(private miServicioUsuario: UsuarioService) { }
+  nombresColumnas: string[] = ['nombre','correo','cedula','rol'];
+  constructor(private miServicioUsuario: UsuarioService,
+    private router: Router) { }
 
   ngOnInit(): void {
     this.listar();
@@ -23,11 +25,10 @@ export class ListarComponent implements OnInit {
       });
   }
   agregar():void{
-    
-    console.log("agregando nuevo")
+    this.router.navigate(["pages/usuarios/crear"]);
   }
   editar(id:string):void{
-    console.log("editando a "+id)
+    this.router.navigate(["pages/usuarios/modificar/"+id]);
   }
   eliminar(id:string):void{
     Swal.fire({

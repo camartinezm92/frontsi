@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import Swal from 'sweetalert2';
 import { Rol } from '../../../modelos/rol.model';
 import { RolService } from '../../../servicios/rol.service';
@@ -10,8 +11,9 @@ import { RolService } from '../../../servicios/rol.service';
 })
 export class ListarComponent implements OnInit {
   Rol : Rol[];
-  nombresColumnas: string[] = ['Cedula','Nombre','Apellido','Numero Resolucion','Partido','Mesa','Incritos Mesa','Voto'];
-  constructor(private miServicioRol: RolService) { }
+  nombresColumnas: string[] = ['nombre','descripcion'];
+  constructor(private miServicioRol: RolService,
+    private router: Router) { }
 
   ngOnInit(): void {
     this.listar();
@@ -23,11 +25,10 @@ export class ListarComponent implements OnInit {
       });
   }
   agregar():void{
-    
-    console.log("agregando nuevo")
+    this.router.navigate(["pages/rol/crear"]);
   }
   editar(id:string):void{
-    console.log("editando a "+id)
+    this.router.navigate(["pages/rol/modificar/"+id]);
   }
   eliminar(id:string):void{
     Swal.fire({

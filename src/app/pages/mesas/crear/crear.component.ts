@@ -18,6 +18,7 @@ export class CrearComponent implements OnInit {
     cantidad_inscritos: "",
     id_jurado_inscrito: ""
   }
+  mesas = []
   constructor(private miServiciomesas: MesasService,
     private rutaActiva: ActivatedRoute,
     private router: Router) { }
@@ -32,7 +33,7 @@ export class CrearComponent implements OnInit {
     }
   }
   getmesas(id: string) {
-    this.miServiciomesas.getMesa(id).
+    this.miServiciomesas.getMesas(id).
       subscribe(data => {
         this.lamesa = data;
       });
@@ -47,7 +48,7 @@ export class CrearComponent implements OnInit {
             'El mesas ha sido creado correctamente',
             'success'
           )
-          this.router.navigate(["pages/mesass/listar"]);
+          this.router.navigate(["pages/mesas/listar"]);
         });
     }
 

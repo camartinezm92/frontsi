@@ -19,6 +19,7 @@ export class CrearComponent implements OnInit {
     apellido: "",
     numero_resolucion:""
   }
+  candidatos = []
   constructor(private miServicioCandidato: CandidatosService,
     private rutaActiva: ActivatedRoute,
     private router: Router) { }
@@ -32,6 +33,7 @@ export class CrearComponent implements OnInit {
       this.modoCreacion = true;
     }
   }
+  
   getcandidato(id: string) {
     this.miServicioCandidato.getCandidato(id).
       subscribe(data => {
@@ -48,7 +50,7 @@ export class CrearComponent implements OnInit {
             'El candidato ha sido creado correctamente',
             'success'
           )
-          this.router.navigate(["pages/Candidatos/listar"]);
+          this.router.navigate(["/pages/candidatos/listar"]);
         });
     }
 
@@ -63,7 +65,7 @@ export class CrearComponent implements OnInit {
             'El candidato ha sido actualizado correctamente',
             'success'
           )
-          this.router.navigate(["pages/Candidato/listar"]);
+          this.router.navigate(["/pages/candidatos/listar"]);
         });
     }
 

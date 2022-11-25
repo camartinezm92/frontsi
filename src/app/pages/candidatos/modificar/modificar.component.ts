@@ -48,7 +48,7 @@ export class ModificarComponent implements OnInit {
             'El candidato ha sido creado correctamente',
             'success'
           )
-          this.router.navigate(["pages/Candidatos/listar"]);
+          this.router.navigate(["pages/candidatos/listar"]);
         });
     }
 
@@ -59,11 +59,11 @@ export class ModificarComponent implements OnInit {
       this.miServicioCandidato.editar(this.elcandidato._id, this.elcandidato).
         subscribe(data => {
           Swal.fire(
-            'Actualizado',
+            'Modificado',
             'El candidato ha sido actualizado correctamente',
             'success'
           )
-          this.router.navigate(["pages/Candidato/listar"]);
+          this.router.navigate(["/pages/candidatos/listar"]);
         });
     }
 
