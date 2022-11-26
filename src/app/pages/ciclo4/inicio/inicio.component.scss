@@ -11,7 +11,7 @@ body {
     font-family: sans-serif;
 }
 
-.head {
+/**.head {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -20,7 +20,7 @@ body {
     position: fixed;
     width: 100%;
     z-index: 100; 
-}
+}**/
 
 .navbar {
     display: flex;
@@ -82,7 +82,7 @@ p {
 .btn {
     display: inline-block;
     margin-top: 15px;
-    padding: 10px 40px;
+    padding: 0px 0px;
     border: 2px solid #20b8b0;
     color: #fff;
     text-decoration: none;
@@ -96,7 +96,7 @@ p {
 
 .btn-home {
     display: flex;    
-} 
+}
 
 .btn-home a {
     margin: 0 10px;
@@ -104,7 +104,7 @@ p {
 
 
 .content {
-    height: 50vh;
+    height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
