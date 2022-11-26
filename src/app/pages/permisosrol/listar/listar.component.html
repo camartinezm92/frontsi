@@ -15,11 +15,12 @@
                 <tr>
                     <td>{{permisosrolActual.rol.nombre}}</td>
                     <td>{{permisosrolActual.permiso.url}}</td>
-                    <td>{{permisosrolActual.permiso.metodo}}</td>                    
+                    <td>{{permisosrolActual.permiso.metodo}}</td>              
                     <td>
                         <button type="button" class="btn btn-primary" 
-                                (click)="editar(permisosrolActual._id)">
+                                (click)="editar(permisosrolActual._id)"[(ngModel)]="permisosrolActual._id">
                             <i class="fas fa-pencil-alt">Editar</i>
+                            
                         </button>
                         <button type="button" class="btn btn-danger" 
                                 (click)="eliminar(permisosrolActual._id)">

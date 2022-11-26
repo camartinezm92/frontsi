@@ -11,7 +11,7 @@
                     <label>ROL</label>
                 </div>
                 <div class="col-9">
-                    <select class="form-select" [(ngModel)]="relacion1">
+                    <select  class="form-select" [(ngModel)]="relacion1">
                         <option value="" selected>Seleccione un ROL</option>
                         <ng-container *ngFor="let rolesActual of listaRol">
                             <option value="{{rolesActual._id}}">{{rolesActual.nombre}}</option>

@@ -11,7 +11,7 @@ import { UsuarioService } from '../../../servicios/usuario.service';
 })
 export class ListarComponent implements OnInit {
   Usuario : Usuario[];
-  nombresColumnas: string[] = ['nombre','correo','cedula','rol'];
+  nombresColumnas: string[] = ['nombre','correo','cedula','rol','Accion'];
   constructor(private miServicioUsuario: UsuarioService,
     private router: Router) { }
 
@@ -26,6 +26,9 @@ export class ListarComponent implements OnInit {
   }
   agregar():void{
     this.router.navigate(["pages/usuarios/crear"]);
+  }
+  relacionar():void{
+    this.router.navigate(["pages/usuarios/relacionar"]);
   }
   editar(id:string):void{
     this.router.navigate(["pages/usuarios/modificar/"+id]);
